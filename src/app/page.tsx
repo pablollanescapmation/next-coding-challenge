@@ -1,65 +1,23 @@
-import Image from "next/image";
+import ModalLauncher from "../components/ModalLauncher";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        <header>
+          <h1>Next.js Coding Challenge</h1>
+          <p>Coding challenge intended to evaluate next and react skills for frontend position</p>
+        </header>
+        <section className={styles.landscapeSection}>
+          <div className={styles.column}>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam alias soluta necessitatibus maiores, tempora sequi repellat, quaerat ut explicabo fugiat ratione? Eos quod accusantium consequuntur sapiente tempora quasi modi nisi ab hic inventore possimus corporis quia repudiandae officia iusto quis rerum eveniet nesciunt, deleniti ad at? Tenetur ab dolore esse.</p>
+          </div>
+          <div className={styles.column}>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis quo excepturi magnam officia sunt maiores aliquid doloremque soluta voluptatem hic! Accusantium, dolor hic quidem odio eius ut voluptates facere repellat perspiciatis est natus necessitatibus, vel qui mollitia nostrum magni quo quaerat ex? Autem eos eum ab veniam deleniti dolorum numquam!</p>
+            <ModalLauncher />
+          </div>
+        </section>
       </main>
     </div>
   );
