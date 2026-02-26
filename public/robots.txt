@@ -1,0 +1,12 @@
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /public/
+
+# Sitemap location
+Sitemap: https://yoursite.com/sitemap.xml
+
+# Crawl delay (optional - set to reasonable value)
+Crawl-delay: 1

@@ -1,11 +1,34 @@
+import { Metadata } from "next";
 import ModalLauncher from "@/components/ModalLauncher";
 import Header from "@/components/Header";
 import LandscapeSection from "@/components/LanscapeSection";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Next.js Coding Challenge | Frontend Skills Evaluation",
+  description: "Comprehensive Next.js and React coding challenge to evaluate frontend development skills for professional positions.",
+};
+
+// JSON-LD structured data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Next.js Coding Challenge",
+  description: "A comprehensive Next.js and React coding challenge designed to evaluate frontend development skills.",
+  url: "https://yoursite.com",
+  publisher: {
+    "@type": "Organization",
+    name: "Challenge Creator",
+  },
+};
+
 export default function Home() {
   return (
     <div className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className={styles.main}>
         <Header title="Next.js Coding Challenge" description="Coding challenge intended to evaluate next and react skills for frontend position" />
         <LandscapeSection

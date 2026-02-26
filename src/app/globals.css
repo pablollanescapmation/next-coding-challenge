@@ -26,10 +26,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  margin-bottom: 2rem;
-}
-
 /* Headings */
 h1,
 h2,
