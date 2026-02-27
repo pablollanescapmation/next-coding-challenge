@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "@/design-system/theme";
 
 type Props = {
     title: string;
@@ -8,8 +9,16 @@ type Props = {
 const HeaderRoot = styled.header`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 2rem 1rem;
+        gap: ${theme.spacing.xs};
+        padding: ${theme.spacing.lg} ${theme.spacing.sm};
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 `;
 
 export default function Header({ title, description }: Props) {

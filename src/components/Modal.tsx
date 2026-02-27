@@ -2,29 +2,10 @@
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import { ModalContent, ModalOverlay } from '@/design-system/primitives';
+import { theme } from '@/design-system/theme';
 
 type ModalProps = { isOpen: boolean; onClose: () => void; children: React.ReactNode };
-
-const Overlay = styled.div`
-  z-index: 1000;
-  background: #00000080;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: fixed;
-  inset: 0;
-`;
-
-const Content = styled.div`
-  background: #fff;
-  border-radius: 8px;
-  max-width: 90vw;
-  max-height: 90vh;
-  padding: 1.5rem;
-  position: relative;
-  overflow: auto;
-  box-shadow: 0 5px 15px #0000004d;
-`;
 
 const Close = styled.button`
   cursor: pointer;
@@ -34,6 +15,7 @@ const Close = styled.button`
   position: absolute;
   top: .5rem;
   right: .5rem;
+  color: ${theme.colors.text};
 `;
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
@@ -45,12 +27,12 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
 
   if (!isOpen) return null;
   return ReactDOM.createPortal(
-    <Overlay>
-      <Content>
+    <ModalOverlay>
+      <ModalContent>
         <Close onClick={onClose} aria-label="Close modal">×</Close>
         {children}
-      </Content>
-    </Overlay>,
+      </ModalContent>
+    </ModalOverlay>,
     document.body
   );
 }

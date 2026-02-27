@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ModalLauncher from "@/components/ModalLauncher";
 import Header from "@/components/Header";
-import LandscapeSection from "@/components/LanscapeSection";
+import LandscapeSection from "@/components/LandscapeSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
