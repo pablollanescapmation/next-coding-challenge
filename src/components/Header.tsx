@@ -9,10 +9,11 @@ type Props = {
 const HeaderRoot = styled.header`
   display: flex;
   flex-direction: column;
-        gap: ${theme.spacing.xs};
-        padding: ${theme.spacing.lg} ${theme.spacing.sm};
+    gap: ${theme.spacing.xs};
+    padding: ${theme.spacing.lg} ${theme.spacing.sm};
 
     h1 {
+        font-size: 3rem;
         margin-bottom: 0;
     }
 

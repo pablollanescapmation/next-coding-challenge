@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Coding Challenge
 
-## Getting Started
+A small Next.js 16 + React 19 application that demonstrates:
 
-First, run the development server:
+- App Router structure
+- Styled-components based design system
+- Reusable UI components (`Header`, `LandscapeSection`, `Modal`)
+- Storybook stories for visual component development
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Scope
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project is intentionally compact and focuses on front-end quality fundamentals:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- component composition
+- UI consistency through shared theme tokens
+- accessibility basics for interactive UI (modal + buttons)
+- modern Next.js metadata and SEO helpers
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- Next.js 16
+- React 19
+- TypeScript 5
+- styled-components 6
+- Storybook 10
+- ESLint 9 with `eslint-config-next`
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` — start local Next.js dev server
+- `npm run build` — production build
+- `npm run start` — run production server
+- `npm run lint` — run ESLint
+- `npm run storybook` — start Storybook
+- `npm run build-storybook` — build Storybook static output
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Run Locally
 
-## Deploy on Vercel
+1. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+	```bash
+	npm install
+	```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Start the app:
+
+	```bash
+	npm run dev
+	```
+
+3. Open `http://localhost:3000`
+
+## Project Structure
+
+- `src/app` — app routes, layout, metadata, and global styles
+- `src/components` — reusable UI components
+- `src/design-system` — theme, provider, and shared styled primitives
+- `src/stories` — Storybook stories for components
+
+## Notes
+
+- `storybook-static/` is generated build output and is ignored by lint.
+- Fonts are configured with `next/font` in the root layout.

@@ -20,16 +20,19 @@ const Close = styled.button`
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   useEffect(() => {
+    if (!isOpen) return;
+
     const onEsc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onEsc);
     return () => document.removeEventListener('keydown', onEsc);
-  }, [onClose]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+
   return ReactDOM.createPortal(
-    <ModalOverlay>
-      <ModalContent>
-        <Close onClick={onClose} aria-label="Close modal">×</Close>
+    <ModalOverlay onClick={onClose}>
+      <ModalContent role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+        <Close type="button" onClick={onClose} aria-label="Close modal">×</Close>
         {children}
       </ModalContent>
     </ModalOverlay>,

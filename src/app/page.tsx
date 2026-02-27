@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import ModalLauncher from "@/components/ModalLauncher";
 import Header from "@/components/Header";
 import LandscapeSection from "@/components/LandscapeSection";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 // JSON-LD structured data for SEO
-const jsonLd = {
+const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Next.js Coding Challenge",
@@ -25,19 +26,37 @@ const jsonLd = {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <script
+      <Script
+        id="home-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
       <main className={styles.main}>
-        <Header title="Next.js Coding Challenge" description="Coding challenge intended to evaluate next and react skills for frontend position" />
+        <Header
+          title="Next.js Coding Challenge"
+          description="Coding challenge intended to evaluate Next.js and React skills for frontend positions."
+        />
         <LandscapeSection
           left={
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam alias soluta necessitatibus maiores, tempora sequi repellat, quaerat ut explicabo fugiat ratione? Eos quod accusantium consequuntur sapiente tempora quasi modi nisi ab hic inventore possimus corporis quia repudiandae officia iusto quis rerum eveniet nesciunt, deleniti ad at? Tenetur ab dolore esse.</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam alias
+              soluta necessitatibus maiores, tempora sequi repellat, quaerat ut
+              explicabo fugiat ratione? Eos quod accusantium consequuntur sapiente
+              tempora quasi modi nisi ab hic inventore possimus corporis quia
+              repudiandae officia iusto quis rerum eveniet nesciunt, deleniti ad at?
+              Tenetur ab dolore esse.
+            </p>
           }
           right={
             <>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis quo excepturi magnam officia sunt maiores aliquid doloremque soluta voluptatem hic! Accusantium, dolor hic quidem odio eius ut voluptates facere repellat perspiciatis est natus necessitatibus, vel qui mollitia nostrum magni quo quaerat ex? Autem eos eum ab veniam deleniti dolorum numquam!</p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis quo
+                excepturi magnam officia sunt maiores aliquid doloremque soluta
+                voluptatem hic! Accusantium, dolor hic quidem odio eius ut voluptates
+                facere repellat perspiciatis est natus necessitatibus, vel qui mollitia
+                nostrum magni quo quaerat ex? Autem eos eum ab veniam deleniti dolorum
+                numquam!
+              </p>
               <ModalLauncher />
             </>
           }
